@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:googlelogin/googlelogin/googlelogin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:googlelogin/homepage.dart';
 
 
 void main() async{
@@ -18,6 +19,7 @@ void main() async{
     routes: {
       '/': (context) => LessApp(),
       '/second': (context)=>GoogleLogin(),
+      '/third':(context)=>HomePage(),
     },
   ));
 }
@@ -53,11 +55,6 @@ class LessApp extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image(
-                      height: 35,
-                      image: AssetImage("collection/googlelogo.png"),
-                    ),
-                    SizedBox(width: 20,),
                     Text("Google Login"),
                   ],
                 ),

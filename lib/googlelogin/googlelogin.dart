@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:googlelogin/googlelogin/googlesignin.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class GoogleLogin extends StatefulWidget {
+  static String? loginfo="ok";
+  static String? logphoto="ok";
   _GoogleLoginState createState() => _GoogleLoginState();
 }
 
 class _GoogleLoginState extends State<GoogleLogin> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,32 +37,35 @@ class _GoogleLoginState extends State<GoogleLogin> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
-                  minimumSize: const Size.fromRadius(25),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image(
-                      height: 35,
-                      image: AssetImage("collection/googlelogo.png"),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text("Sign Up Google"),
-                  ],
-                ),
-                onPressed: () {
+            ElevatedButton(
+              child: Text("Google Login"),
+              onPressed: ()async{
+                try{
+                  print("one");
+                  await RoomGoogleSignIn.doSignIn();
+                  print("two");
+                  User? usern=await RoomGoogleSignIn.getUser();
+                  print("three");
+                  GoogleLogin.loginfo=usern!.displayName;
+                  GoogleLogin.logphoto=usern.photoURL;
+                  setState(() {
+                    print("State 4");
+                  });
 
-                  //Navigator.pushNamed(context, '/second');
-                },
-              ),
+                }
+                catch(ex)
+                {
+                  print(ex);
+                  GoogleLogin.loginfo=ex.toString();
+                  setState(() {
+
+                  });
+                }
+                Navigator.pushNamed(context, '/third');
+              },
+
             ),
+
           ],
         ),
       ),
