@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:googlelogin/googlelogin/googlelogin.dart';
 
-
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    initialRoute: '/',
-    routes: {
-      '/': (context) => LessApp(),
-      '/second': (context)=>GoogleLogin(),
-    },
-  ));
+class GoogleLogin extends StatefulWidget {
+  _GoogleLoginState createState() => _GoogleLoginState();
 }
 
-class LessApp extends StatelessWidget {
+class _GoogleLoginState extends State<GoogleLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Card(
           color: Colors.cyanAccent,
-          child: Text("Google Login",style: TextStyle(fontSize: 30),),
+          child: Text(
+            "Login",
+            style: TextStyle(fontSize: 30),
+          ),
         ),
         backgroundColor: Colors.cyanAccent,
       ),
@@ -31,7 +25,10 @@ class LessApp extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: Card(
-                child: Text("Welcome",style: TextStyle(fontSize: 40),),
+                child: Text(
+                  "Welcome for Login With Google",
+                  style: TextStyle(fontSize: 20),
+                ),
               ),
             ),
             Padding(
@@ -48,12 +45,15 @@ class LessApp extends StatelessWidget {
                       height: 35,
                       image: AssetImage("collection/googlelogo.png"),
                     ),
-                    SizedBox(width: 20,),
-                    Text("Google Login"),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text("Sign Up Google"),
                   ],
                 ),
-                onPressed: (){
-                  Navigator.pushNamed(context, '/second');
+                onPressed: () {
+
+                  //Navigator.pushNamed(context, '/second');
                 },
               ),
             ),
