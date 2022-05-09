@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "752157566014",
+    "project_id": "login-c550b",
+    "storage_bucket": "login-c550b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752157566014:android:328cc5dd1b560971581d6f",
+        "android_client_info": {
+          "package_name": "com.avinashvns.googlelogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752157566014-n7cukksqcg2ujpobc9kfcg4hqjrjf60a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAly4zlXfRe-131SMGUxvdlIy7NpqWGDFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "752157566014-n7cukksqcg2ujpobc9kfcg4hqjrjf60a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
