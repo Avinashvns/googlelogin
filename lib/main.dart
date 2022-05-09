@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:googlelogin/googlelogin/googlelogin.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
-void main() {
+void main() async{
+  {
+    try{
+      WidgetsFlutterBinding.ensureInitialized();
+      await Firebase.initializeApp();
+    }
+    catch(e){ }
+  }
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: '/',
